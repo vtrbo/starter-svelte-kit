@@ -1,5 +1,6 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from 'unocss'
+import { defineConfig, presetIcons, presetUno, transformerDirectives, transformerVariantGroup } from 'unocss'
 import extractorSvelte from '@unocss/extractor-svelte'
+import { collectionIcons } from './src/lib/icons'
 
 export default defineConfig({
   extractors: [
@@ -11,14 +12,15 @@ export default defineConfig({
     }),
     presetIcons({
       warn: true,
-      scale: 1,
+      scale: 1.2,
       extraProperties: {
         'display': 'inline-block',
         'vertical-align': 'middle',
       },
-      collections: {},
+      collections: {
+        vtr: collectionIcons(),
+      },
     }),
-    presetAttributify(),
   ],
   transformers: [
     transformerDirectives(),
@@ -40,9 +42,5 @@ export default defineConfig({
   theme: {
     colors: {},
   },
-  shortcuts: {
-    fxc: 'flex justify-center items-center',
-    fxs: 'flex justify-center items-start',
-    fxe: 'flex justify-center items-end',
-  },
+  shortcuts: {},
 })

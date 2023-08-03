@@ -1,0 +1,33 @@
+:root {
+  --sk-bg: #ffffff;
+  --sk-scrollbar: #eeeeee;
+  --sk-scrollbar-hover: #bbbbbb;
+}
+
+html {
+  background-color: var(--sk-bg);
+  overflow: scroll;
+}
+
+* {
+  scrollbar-color: var(--sk-scrollbar) var(--sk-bg);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: var(--sk-bg);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sk-scrollbar);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sk-scrollbar-hover);
+}

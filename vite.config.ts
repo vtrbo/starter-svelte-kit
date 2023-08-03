@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { sveltekit } from '@sveltejs/kit/vite'
 import UnoCss from 'unocss/vite'
 import UnpluginIcons from 'unplugin-icons/vite'
+import { collectionIcons } from './src/lib/icons'
 
 export default defineConfig({
   plugins: [
@@ -9,9 +10,12 @@ export default defineConfig({
     UnoCss(),
     UnpluginIcons({
       compiler: 'svelte',
-      scale: 1,
+      scale: 1.2,
       defaultClass: 'svg-icon',
       defaultStyle: 'display: inline-block; vertical-align: middle;',
+      customCollections: {
+        vtr: collectionIcons(),
+      },
     }),
   ],
   server: {
